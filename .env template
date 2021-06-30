@@ -1,0 +1,13 @@
+# Movie rating app environment variables
+PORT= # OPTIONAL
+
+# POSTGRES VARIABLES
+PG_USER= # String
+PG_PASSWORD= # String
+PG_HOST= # String
+PG_PORT= # Number
+
+# Secret Keys
+
+TMDB_API_KEY= # TMDB api key
+SESSION_KEY= # 32-bit Unique String
