@@ -4,6 +4,9 @@
   "description": "movie rating app",
   "main": "app.js",
   "scripts": {
+    "database-migration": "scripts/migration.sh",
+    "database-seeding": "scripts/seed.sh",
+    "dev": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,7 +18,7 @@
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
     "pg": "^8.6.0",
-    "pgpromise": "^0.1.1"
+    "pg-promise": "^10.10.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.8"
