@@ -1,5 +1,5 @@
 const indexPage = (req, res) => {
-    res.send('Welcome to our movie rating app')
+    res.render('pages/index')
 }
 
 module.exports = {

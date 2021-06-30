@@ -1,6 +1,9 @@
 const express = require('express');
 const session = require('express-session');
 
+// Importing handlebar package
+const expressHandlebars = require('express-handlebars');
+
 // Importing dotenv package
 require('dotenv').config();
 
@@ -11,6 +14,15 @@ const db = require('./config/database');
 
 // Importing public folder
 app.use(express.static('public'));
+
+// Defining handlebars
+app.engine('handlebars', expressHandlebars ({
+        defaultLayout:'main', 
+        layoutsDir: __dirname + '/views/layouts/',
+        partialsDir: __dirname + '/views/partials/'
+    })
+);
+app.set('view engine', 'handlebars');
 
 const port = process.env.PORT || 3000;
 
