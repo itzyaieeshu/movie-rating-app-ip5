@@ -1,0 +1,51 @@
+body {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+}
+section {
+    padding-top: 60px;
+}
+.bg-primary {
+    background-color: #1C1C1C;
+}
+.bg-navbar {
+    background-color: #202733;
+}
+.bg-cs-1 {
+    background-color: #202733;
+}
+.bg-cs-2 {
+    background-color: #2B3D4B;
+}
+.btn-primary {
+    background-color: #353D4B;
+    border-color: #353D4B;
+}
+.btn-primary:hover {
+    background-color: #202733;
+    border-color: #FFFFFF;
+}
+.btn-outline-secondary {
+    background-color: #202733;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+.btn-outline-secondary:hover {
+    background-color: #353D4B;
+    border-color: #353D4B;
+}
+.form-control {
+    height: 60px;
+}
+.hero {
+    height: 30vh;
+    background-image: url("/img/hero.jpeg");
+    background-size: cover;
+}
+.genre-section {
+    background-color: #353D4B;
+}
+.card {
+    border: #202733;
+    border-radius: 20px;
+}
