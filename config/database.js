@@ -4,7 +4,7 @@ const user = process.env.PG_USER;
 const password = process.env.PG_PASSWORD;
 const host = process.env.PG_HOST;
 const pgPort = process.env.PG_PORT;
-const database = 'movie_rating_app_DB';
+const database = 'movie_rating_project5';
 
 const connection = `postgres://${user}:${password}@${host}:${pgPort}/${database}`;
 const db = pgp(connection);
