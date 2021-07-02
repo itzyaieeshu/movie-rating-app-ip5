@@ -46,5 +46,5 @@ require('./routes/routes')(app);
 
 // Code for server
 app.listen(port, () => {
-    console.log(`Movie rating app listening at http://localhost:${port}`);
+    console.log(`Movie rating app listening at http://localhost:${port}/`);
 });
