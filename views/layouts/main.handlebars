@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,4 +11,40 @@
     {{{body}}}
     {{> footer }}
 </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>{{#if title}} {{title}} | {{/if}}Pathé Gaumont cinemas</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
+    <a class="navbar-brand" href="/"><i class="fa fa-film" aria-hidden="true"></i> Movies</a>
+    <div>
+        {{#if loggedIn}}
+            {{#if firstName}}
+            <span class="navbar-brand mr-0">Hi, {{firstName}} |&nbsp;</span>
+            {{!-- <a class="navbar-brand"><p>Welcome, {{firstName}}</p> --}}
+            {{/if}}
+        <a class="navbar-brand" href="/users/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        {{else}}
+        <a class="navbar-brand" href="/users/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+        {{/if}}
+    </div>
+</nav>
+
+<div class="container mt-4 mb-4">
+    {{{body}}}
+</div>
+
+</body>
+
 </html>

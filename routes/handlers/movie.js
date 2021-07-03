@@ -5,3 +5,4 @@ const page = (req, res) => {
 module.exports = {
     page,
 }
+
