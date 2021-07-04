@@ -12,14 +12,15 @@ section {
     background-color: #202733;
 }
 .bg-cs-1 {
-    background-color: #202733;
+    background-color: #202733 !important;
 }
 .bg-cs-2 {
-    background-color: #2B3D4B;
+    background-color: #2B3D4B !important;
 }
 .btn-primary {
     background-color: #353D4B;
     border-color: #353D4B;
+    min-width: 120px;
 }
 .btn-primary:hover {
     background-color: #202733;
@@ -29,6 +30,7 @@ section {
     background-color: #202733;
     color: #FFFFFF;
     border-color: #FFFFFF;
+    min-width: 120px;
 }
 .btn-outline-secondary:hover {
     background-color: #353D4B;
@@ -38,9 +40,16 @@ section {
     height: 60px;
 }
 .hero {
-    height: 30vh;
+    min-height: 30vh;
     background-image: url("/img/hero.jpeg");
     background-size: cover;
+}
+.hero-layer {
+    background-color: rgba(28,28,28, 0.3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 30vh;
 }
 .genre-section {
     background-color: #353D4B;
@@ -48,4 +57,8 @@ section {
 .card {
     border: #202733;
     border-radius: 20px;
+}
+#movies-search-box:focus {
+    border-color:rgba(0,0,0,.0);
+    box-shadow:0 0 0 rgba(0,0,0,.0) !important;
 }
