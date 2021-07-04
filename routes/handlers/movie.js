@@ -1,7 +1,9 @@
 const page = (req, res) => {
-    res.render('pages/movie')
-}
+  res.render("pages/movie", {
+      title: 'movie',
+  });
+};
 
 module.exports = {
-    page,
-}
+  page,
+};
