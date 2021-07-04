@@ -3,7 +3,7 @@ const login = require('./handlers/login');
 const signup = require('./handlers/signup');
 const moviesList = require('./handlers/moviesList');
 const movie = require('./handlers/movie');
-const moviesAPI = require('./services/moviesAPI');
+const moviesAPI = require('./handlers/moviesAPI');
 
 module.exports = (app) => {
     app.get('/', index.page),
@@ -11,5 +11,5 @@ module.exports = (app) => {
     app.get('/signup', signup.page),
     app.get('/movies', moviesList.page),
     app.get('/movie', movie.page),
-    app.get('/api/discover/movie', moviesAPI.popularMovies)
+    app.get('/api/discover/movie', moviesAPI.getPopularMovies)
 }

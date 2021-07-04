@@ -1,10 +1,11 @@
 console.log("Testing")
 
-
-function getPopularMovies() {
+const getPopularMovies = () => {
+    let results;
     $.getJSON(`/api/discover/movie`, (data) => {
-        console.log(data.results)
+        results = data;
+        console.log(results)
     })
+    return results
 }
-
 getPopularMovies();

@@ -1,7 +1,14 @@
+const moviesAPI = require('../services/moviesAPI');
+
 const page = (req, res) => {
-  res.render("pages/index", {
-      title: 'Home',
-  });
+  moviesAPI.popularMovies()
+  .then(response => {
+    res.render("pages/index", {
+        title: 'Home',
+        popularMovies: response.data.results,
+    }); 
+  })
+  .catch(err => console.error(err));
 };
 
 module.exports = {
