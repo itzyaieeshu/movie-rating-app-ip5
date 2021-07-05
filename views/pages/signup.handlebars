@@ -4,7 +4,7 @@
     {{#if message}}
     {{> message}}
     {{/if}}
-    <form action="/users/signup" method="post">
+    <form action="/signup" method="post">
         <div class="form-group">
             <label for="firstNameInput">First name</label>
             <input name="firstName" type="text" class="form-control" id="firstNameInput" required="true"
@@ -41,6 +41,6 @@
     </form>
 
     <div class="my-3 text-center">
-        <a class="text-dark" href="/users/login">Already have an account? Login</a>
+        <a class="text-dark" href="/login">Already have an account? Login</a>
     </div>
 </div>
