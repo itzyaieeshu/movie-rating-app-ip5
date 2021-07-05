@@ -10,6 +10,6 @@ module.exports = (app) => {
     app.get('/login', login.page),
     app.get('/signup', signup.page),
     app.get('/movies', moviesList.page),
-    app.get('/movie', movie.page),
+    app.get('/movie/:id', movie.page),
     app.get('/api/discover/movie', moviesAPI.getPopularMovies)
 }

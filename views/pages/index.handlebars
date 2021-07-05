@@ -9,13 +9,15 @@
             <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
                 {{#each popularMovies}}
                 <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                    <div class="card  bg-cs-2 shadow-sm">
-                        <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
-                        <div class="card-body text-light">
-                            <h4>{{original_title}}</h4>
-                            <p class="card-text">{{release_date}}</p>
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{release_date}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 {{/each}}
             </div>
