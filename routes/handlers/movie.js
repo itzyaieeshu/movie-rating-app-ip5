@@ -1,7 +1,15 @@
+const moviesAPI = require('../services/moviesAPI');
+
 const page = (req, res) => {
-  res.render("pages/movie", {
+  moviesAPI.movie(req.params.id)
+  .then(response => {
+      res.render("pages/movie", {
       title: 'movie',
-  });
+      data: response.data,
+    });
+  })
+  .catch(err => console.error(err));
+
 };
 
 module.exports = {

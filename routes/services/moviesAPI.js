@@ -6,9 +6,9 @@ const api_query = `?api_key=${api_key}`
 
 const popularMovies = () => axios.get('/discover/movie' + api_query);
 
-const getMovie = (id) => axios.get('/movie' + id + api_query);
+const movie = (id) => axios.get('/movie/' + id + api_query);
 
 module.exports = {
     popularMovies,
-    getMovie,
+    movie,
 }
