@@ -1,19 +1,31 @@
-<h2>Welcome to our movie rating app - login page</h2>
 <div class="col offset-md-3 col-md-6 mb-5">
     {{#if message}}
     {{> message}}
     {{/if}}
-    <form action="/users/login" method="post" class="mb-3">
+    <form id="loginForm" action="/login" method="post" class="mb-3" novalidate>
+          <div>
+        {{#if successMessage}}
+            <p class="success-message">{{successMessage}}</p>
+        {{/if}}
+   
+        {{#if message}}
+           <p class="error">{{message}}</p>
+        {{/if}}
+    </div>
         <div class="form-group">
             <label for="userEmail">Email address</label>
             <input type="email" name="email" class="form-control" id="userEmail" aria-describedby="emailHelp"
                 required="true" {{#if email}} value="{{email}}" {{/if}}>
+            <div class="error" id="emailErr"></div>
+
         </div>
 
         <div class="form-group mb-4">
             <label for="userPassword">Password</label>
             <input type="password" name="password" class="form-control" id="userPassword" required="true"
                 {{#if password}} value="{{password}}" {{/if}}>
+            <div class="error" id="pwdErr"></div>
+
         </div>
 
         <div class="my-3 text-center">
@@ -22,6 +34,6 @@
     </form>
 
     <div class="my-3 text-center">
-        <a class="text-dark" href="/users/signup">Need an account? Sign up here.</a>
+        <a class="text-dark" href="/signup">Need an account? Sign up here.</a>
     </div>
 </div>

@@ -62,3 +62,7 @@ section {
     border-color:rgba(0,0,0,.0);
     box-shadow:0 0 0 rgba(0,0,0,.0) !important;
 }
+
+.heading.two {
+    font-size: 25px;
+  }

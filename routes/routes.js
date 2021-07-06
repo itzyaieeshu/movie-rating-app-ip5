@@ -8,7 +8,9 @@ const moviesAPI = require('./handlers/moviesAPI');
 module.exports = (app) => {
     app.get('/', index.page),
     app.get('/login', login.page),
+    app.post('/login', login.loginFormSubmit)
     app.get('/signup', signup.page),
+    app.post('/signup', signup.signupFormSubmit),
     app.get('/movies', moviesList.page),
     app.get('/movie', movie.page),
     app.get('/api/discover/movie', moviesAPI.getPopularMovies)
