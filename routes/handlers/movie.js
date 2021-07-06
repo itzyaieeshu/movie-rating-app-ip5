@@ -5,7 +5,7 @@ const page = (req, res) => {
   .then(response => {
       res.render("pages/movie", {
       title: 'movie',
-      data: response.data,
+      movie: response.data,
     });
   })
   .catch(err => console.error(err));
