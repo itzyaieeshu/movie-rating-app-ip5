@@ -52,205 +52,43 @@
                             <h3>Movie cast</h3>
                         </div> 
                         <div class="carousel" data-flickity='{ "groupCells": true }'>
+                            {{#each movieCredits.cast}}
                             <div class="col-md-2 pt-2 pb-5 carousel-cell">
                                 <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
+                                    <img src="https://image.tmdb.org/t/p/original/{{profile_path}}" class="card-img-top" alt="...">
                                     <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
+                                        <h6>{{name}}</h6>
+                                        <p class="card-text">{{character}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2 pt-2 pb-5 carousel-cell">
-                                <div class="card  bg-cs-2 shadow-sm">
-                                    <img src="img/cast.png" class="card-img-top" alt="...">
-                                    <div class="card-body text-light">
-                                        <h6>Actor name</h6>
-                                        <p class="card-text">Cast name</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
-                <div class="col-1g-12 pl-3 pt-5">
-                    <h1>Popular movies</h1>
-                </div> 
-                <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
-                    <!--<div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="col-12 row card-body text-light">
-                                <div class="col-md-8">
-                                    <h3>Luca</h3>
-                                    <p class="card-text">2016</p>
-                                </div>
-                                <div class="col-md-4 align-middle">
-                                    <div class="rating-circle">
-                                        <p class="font-weight-bold text-center">3.5</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                        <div class="card  bg-cs-2 shadow-sm">
-                            <img src="img/Luca.jpeg" class="card-img-top" alt="...">
-                            <div class="card-body text-light">
-                                <h3>Luca</h3>
-                                <p class="card-text">2016</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Popular movies<h1></h1>
             </div>
-        </sectio>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each popularMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+        
     </div>
