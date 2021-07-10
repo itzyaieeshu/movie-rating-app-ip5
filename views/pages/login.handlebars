@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="col offset-md-3 col-md-6 mb-5">
     {{#if message}}
     {{> message}}
@@ -27,13 +28,43 @@
             <div class="error" id="pwdErr"></div>
 
         </div>
+=======
+<div class="col offset-md-3 col-md-6 mb5">
+    {{#if message}}
+    {{> message}}
+    {{/if}}
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <h1 class="font-weight-bold text-center pt-5">LogIn</h1>
+            <div class="col-mg-12 p-5">
+                <form action="/users/login" method="post" class="mb-3">
+                <div class="form-group p-3">
+                    <input type="email" name="email" placeholder="Email address" class="form-control" id="userEmail" aria-describedby="emailHelp"
+                        required="true" {{#if email}} value="{{email}}" {{/if}}>
+                </div>
 
-        <div class="my-3 text-center">
-            <button type="submit" class="btn btn-dark">Login</button>
-        </div>
-    </form>
+                <div class="form-group p-3 mb-4">
+                    <input type="password" name="password" placeholder="Password" class="form-control" id="userPassword" required="true" {{#if
+                        password}} value="{{password}}" {{/if}}>
+                </div>
+>>>>>>> 126b01fff0347541badfb4099124cbc1d737d7c5
 
+                <div class="my-3 text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                </div>
+            </form>
+
+<<<<<<< HEAD
     <div class="my-3 text-center">
         <a class="text-dark" href="/signup">Need an account? Sign up here.</a>
     </div>
 </div>
+=======
+            <div class="my-3 text-center">
+                <a class="text-light" href="/signup">Need an account? Sign up here.</a>
+            </div>
+            </div>
+            
+        </div>
+    </section>
+>>>>>>> 126b01fff0347541badfb4099124cbc1d737d7c5

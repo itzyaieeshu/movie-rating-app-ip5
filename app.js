@@ -17,12 +17,15 @@ app.use(express.static('public'));
 
 // Defining handlebars
 app.engine('handlebars', expressHandlebars ({
+        extname: "handlebars",
+        helpers: require("./helpers/handlebars.js").helpers,
         defaultLayout:'main', 
         layoutsDir: __dirname + '/views/layouts/',
         partialsDir: __dirname + '/views/partials/'
     })
 );
 app.set('view engine', 'handlebars');
+
 
 const port = process.env.PORT || 3000;
 

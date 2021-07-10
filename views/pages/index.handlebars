@@ -9,13 +9,81 @@
             <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
                 {{#each popularMovies}}
                 <div class="col-md-3 pt-5 pb-5 carousel-cell">
-                    <div class="card  bg-cs-2 shadow-sm">
-                        <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
-                        <div class="card-body text-light">
-                            <h4>{{original_title}}</h4>
-                            <p class="card-text">{{release_date}}</p>
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Animation movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each animationMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Sci-Fi movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each scifiMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Thriller movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each thrillerMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 {{/each}}
             </div>

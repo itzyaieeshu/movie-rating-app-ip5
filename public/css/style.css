@@ -45,7 +45,7 @@ section {
     background-size: cover;
 }
 .hero-layer {
-    background-color: rgba(28,28,28, 0.3);
+    background-color: rgba(28,28,28, 0.5);
     top: 0;
     left: 0;
     width: 100%;
@@ -62,7 +62,22 @@ section {
     border-color:rgba(0,0,0,.0);
     box-shadow:0 0 0 rgba(0,0,0,.0) !important;
 }
-
-.heading.two {
-    font-size: 25px;
-  }
+:root {
+    --star-size: 25px;
+    --star-color: #2B3D4B;
+    --star-background: #FEAA01;
+}
+.Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times;
+    line-height: 1;
+}
+.Stars::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
