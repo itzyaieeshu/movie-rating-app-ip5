@@ -45,7 +45,7 @@ const loginFormSubmit = (req, res) => {
         req.session.firstname = existingUser.firstname
         req.session.lastname = existingUser.lastname
         req.session.loggedin = true;
-        res.redirect('/movie');
+        res.redirect('/index');
       } else {
        // console.log(err)
         res.redirect('/login?message=Incorrect%20login%20details')

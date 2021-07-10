@@ -11,7 +11,7 @@ module.exports = (app) => {
     app.post('/login', login.loginFormSubmit)
     app.get('/signup', signup.page),
     app.post('/signup', signup.signupFormSubmit),
-    app.get('/movies', moviesList.page),
+    app.get('/movies/genre/:id', moviesList.getGenreMovies),
     app.get('/movie', movie.page),
     app.get('/api/discover/movie', moviesAPI.getPopularMovies)
 }
