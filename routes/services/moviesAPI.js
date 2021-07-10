@@ -7,7 +7,7 @@ const lang = '&language=en-US';
 const popularity = '&sort_by=popularity.desc';
 
 const popularMovies = () => axios.get('/discover/movie' + api_query);
-const getGenreMovies = (genreId) => axios.get(`/discover/movie${api_query}&with_genres=${genreId}`)
+const getGenreMovies = (genreId) => axios.get(`/discover/movie${api_query}&with_genres=${genreId}`);
 
 
 
@@ -20,11 +20,8 @@ const genre = (genreName) => axios.get('/discover/movie' + api_query + popularit
 
 module.exports = {
     popularMovies,
-<<<<<<< HEAD
     getGenreMovies,
-=======
     movie,
     movieCredits,
     genre,
->>>>>>> 126b01fff0347541badfb4099124cbc1d737d7c5
 }
