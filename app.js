@@ -8,9 +8,9 @@ const expressHandlebars = require('express-handlebars');
 require('dotenv').config();
 
 const app = express();
-
+  
 // Importing database config
-const db = require('./config/database');
+//const db = require('./config/database');
 
 // Importing public folder
 app.use(express.static('public'));
