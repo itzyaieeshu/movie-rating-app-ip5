@@ -1,0 +1,21 @@
+<div class="col offset-md-3 col-md-6 mb5">
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <h1 class="font-weight-bold text-center pt-5">Rate Movie</h1>
+            <div class="col-mg-12 p-5">
+                <form id="#ratingForm" action="/movie/{{movieid}}/rating" method="post" class="mb-3" novalidate>
+                    <div class="form-group p-3">
+                        <input type="number" name="rating" placeholder="Enter number between 1 and 5" class="form-control" id="rating"
+                            aria-describedby="emailHelp" required="true" {{#if rating}} value="{{rating}}" {{/if}}>
+                    </div>
+
+                    <div class="my-3 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+    </div>

@@ -1,5 +1,13 @@
 {{> header}}
+<div>
+    {{#if successMessage}}
+        <p class="success-message">{{successMessage}}</p>
+    {{/if}}
 
+    {{#if message}}
+        <p class="error">{{message}}</p>
+    {{/if}}                
+</div>                    
 <div class="container">
         <section>
             <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
@@ -33,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="pl-1 pr-1"><a class="btn btn-primary my-2
+                                <div class="pl-1 pr-1"><a href="/movie/{{movie.id}}/rating" class="btn btn-primary my-2
                                             my-sm-0 btn-lg" type="submit">Rate movie</a></div>
                             </div>
                             <div class="col-md-12">
