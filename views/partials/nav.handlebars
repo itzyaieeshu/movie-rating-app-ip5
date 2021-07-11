@@ -18,7 +18,9 @@
         </ul>
         {{#if session}}
         <form class="form-inline my-2 my-lg-0">
-            <div class="pl-1 pr-1"><a class="btn btn-outline-secondary
+            <div class="pl-1 pr-1">
+                 {{#if session}}<a href="/"><i class="fas fa-user-circle"></i> {{sessionUser}}</a>{{/if}}
+                <a class="btn btn-outline-secondary
                     my-2 my-sm-0 btn-lg" href="/logout">Logout</a></div>
         </form>
         {{else}}
