@@ -1,21 +1,12 @@
-const redirectToLogin = (req, res, next) => {
-    if (!req.session.userId) {
-        res.clearCookie('movie_rating_app_sid');
-        res.redirect('/login');
-    } else {
-        next();
-    }
-}
+const createError = require("http-errors");
 
-const redirectToHome = (req, res, next) => {
-    if (req.session.userId) {
-        res.redirect('/');
-    } else {
-        next();
-    }
-}
+const routeProtector = (req, res, next) => {
+  if (req.session && req.session.user) return next();
+  throw createError(403, "Forbidden");
+};
+
+const redirectToHome = (req, res, next) => req.session && req.session.userId ? res.redirect("/") : next();
 
 module.exports = {
-    redirectToLogin,
-    redirectToHome,
-}
+  redirectToHome,
+};
