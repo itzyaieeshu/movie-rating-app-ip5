@@ -1,29 +1,92 @@
-<h2>Welcome to our movie rating app</h2>
+{{> header }}
 
-{{> title}}
-
-{{!-- <form action="/" method="post"> --}}
-    {{!-- <button class="btn btn-dark mb-4" id="get-ratings">Get ratings</button> --}}
-    <input id="movie-ids" name="movie-ids" type="hidden" value="{{movieIds}}">
-{{!-- </form> --}}
-
-<div class="form-inline flex-column-reverse flex-sm-row mb-3">
-    <input class="form-control flex-grow-1 mr-sm-1" id="search" name="search" type="search"
-        placeholder="Search" autocomplete="off" aria-label="Search movies">
-    <select class="custom-select mb-2 mb-sm-0" id="genre" name="genre">
-        <option selected="selected" disabled="disabled">Select Genre</option>
-        <option value="all">All</option>
-        {{#each genres}}
-            <option value="{{this}}">{{this}}</option>
-        {{/each}}
-    </select>
-</div>
-
-<div class="list-group mb-5 d-none" id="found-movies">
-</div>
-
-<div class="row my-5">
-{{#each movies}}
-    {{> movie}}
-{{/each}}
+<div class="container">
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Popular movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each popularMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Animation movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each animationMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Sci-Fi movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each scifiMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+            <div class="col-1g-12 pl-3 pt-5">
+                <h1>Thriller movies<h1></h1>
+            </div>
+            <div class="carousel" data-flickity='{ "groupCells": true, "autoPlay": 5000 }'>
+                {{#each thrillerMovies}}
+                <div class="col-md-3 pt-5 pb-5 carousel-cell">
+                    <a href="/movie/{{id}}">
+                        <div class="card  bg-cs-2 shadow-sm">
+                            <img src="https://image.tmdb.org/t/p/original/{{poster_path}}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h4>{{original_title}}</h4>
+                                <p class="card-text">{{splitYear release_date}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
 </div>

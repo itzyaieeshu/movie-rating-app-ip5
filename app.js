@@ -8,21 +8,24 @@ const expressHandlebars = require('express-handlebars');
 require('dotenv').config();
 
 const app = express();
-
+  
 // Importing database config
-const db = require('./config/database');
+//const db = require('./config/database');
 
 // Importing public folder
 app.use(express.static('public'));
 
 // Defining handlebars
 app.engine('handlebars', expressHandlebars ({
+        extname: "handlebars",
+        helpers: require("./helpers/handlebars.js").helpers,
         defaultLayout:'main', 
         layoutsDir: __dirname + '/views/layouts/',
         partialsDir: __dirname + '/views/partials/'
     })
 );
 app.set('view engine', 'handlebars');
+
 
 const port = process.env.PORT || 3000;
 

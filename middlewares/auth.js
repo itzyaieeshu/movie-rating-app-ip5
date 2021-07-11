@@ -1,17 +1,12 @@
-const { compare, hash } = require('bcryptjs')
-const createError = require('http-errors')
-
-const hashPassword = async (password) => hash(password, 8)
-const comparePassword = async (requestPassword, passwordInDbB) =>
-  compare(requestPassword, passwordInDbB)
+const createError = require("http-errors");
 
 const routeProtector = (req, res, next) => {
-  if (req.session && req.session.user) return next()
-  throw createError(403, 'Forbidden')
-}
+  if (req.session && req.session.user) return next();
+  throw createError(403, "Forbidden");
+};
+
+const redirectToHome = (req, res, next) => req.session && req.session.userId ? res.redirect("/") : next();
 
 module.exports = {
-  hashPassword,
-  comparePassword,
-  routeProtector,
-}
+  redirectToHome,
+};
