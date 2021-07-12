@@ -41,12 +41,15 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                    <a class="btn btn-primary my-2
-                                            my-sm-0 btn-lg" type="submit" id="login-modal"
-                                        onclick="openModal(rateLoginModal)">Login</a>
+                                    {{#if session}}
                                     <a class="btn btn-primary my-2
                                             my-sm-0 btn-lg" type="submit" id="Rate-movie"
                                         onclick="openModal(rateMovieModal)">Rate movie</a>
+                                    {{else}}
+                                    <a class="btn btn-primary my-2
+                                            my-sm-0 btn-lg" type="submit" id="login-modal"
+                                        onclick="openModal(rateLoginModal)">Login to Rate Movie</a>
+                                    {{/if}}
                             </div>
                             <div id="rateLoginModal" class="modal">
                                 <div class="modal-content">
