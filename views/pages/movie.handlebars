@@ -41,8 +41,103 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="pl-1 pr-1"><a href="/movie/{{movie.id}}/rating" class="btn btn-primary my-2
-                                            my-sm-0 btn-lg" type="submit">Rate movie</a></div>
+                                    <a class="btn btn-primary my-2
+                                            my-sm-0 btn-lg" type="submit" id="login-modal"
+                                        onclick="openModal(rateLoginModal)">Login</a>
+                                    <a class="btn btn-primary my-2
+                                            my-sm-0 btn-lg" type="submit" id="Rate-movie"
+                                        onclick="openModal(rateMovieModal)">Rate movie</a>
+                            </div>
+                            <div id="rateLoginModal" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="content-center">
+                                            <a class="navbar-brand" href="/"><img src="/img/logo.png" width="240"
+                                                    height="40" class="d-inline-block align-top" alt=""></a>
+                                            <span onclick="closeModal(rateLoginModal)" id="modal-close"
+                                                class="modal-close-box">&times;</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-center">
+                                        <div class="col-lg-12 genre-section rounded-lg bg-cs-1">
+                                            <h1 class="font-weight-bold text-center p-3">LogIn</h1>
+                                            <div class="col-mg-12 pb-5 pl-5 pr-5">
+                                                <form action="/users/login" method="post" class="mb-3">
+                                                    <div class="form-group p-3">
+                                                        <input type="email" name="email" placeholder="Email address"
+                                                            class="form-control" id="userEmail"
+                                                            aria-describedby="emailHelp" required="true" value="">
+
+                                                    </div>
+
+                                                    <div class="form-group p-3 mb-4">
+                                                        <input type="password" name="password" placeholder="Password"
+                                                            class="form-control" id="userPassword" required="true"
+                                                            value="">
+                                                    </div>
+
+                                                    <div class="my-3 text-center">
+                                                        <button type="submit"
+                                                            class="btn btn-primary btn-lg">Login</button>
+                                                    </div>
+                                                </form>
+
+                                                <div class="text-center">
+                                                    <a class="text-light" href="/signup">Need an account? Sign up
+                                                        here.</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="rateMovieModal" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="content-center">
+                                            <a class="navbar-brand" href="/"><img src="/img/logo.png" width="240"
+                                                    height="40" class="d-inline-block align-top" alt=""></a>
+                                            <span onclick="closeModal(rateMovieModal)" id="modal-close"
+                                                class="modal-close-box">&times;</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-center">
+                                        <div class="col-lg-12 genre-section rounded-lg bg-cs-1 pt-5">
+                                            <h3 class="font-weight-light text-center p-3">How many stars would you give
+                                                for the movie
+                                                <br /><span class="font-weight-bold">Luca</span>
+                                            </h3>
+                                            <div class="col-mg-12 pb-5 pl-5 pr-5">
+                                                <form action="/movie/683273/rating" method="post" class="mb-3">
+                                                    <div class="row">
+                                                        <div class="rate mx-auto">
+                                                            <input type="radio" id="star5" name="rate" value="5" />
+                                                            <label for="star5" title="text">5 stars</label>
+                                                            <input type="radio" id="star4" name="rate" value="4" />
+                                                            <label for="star4" title="text">4 stars</label>
+                                                            <input type="radio" id="star3" name="rate" value="3" />
+                                                            <label for="star3" title="text">3 stars</label>
+                                                            <input type="radio" id="star2" name="rate" value="2" />
+                                                            <label for="star2" title="text">2 stars</label>
+                                                            <input type="radio" id="star1" name="rate" value="1" />
+                                                            <label for="star1" title="text">1 star</label>
+                                                        </div>
+    
+                                                        <div class="col-lg-12 my-3 text-center">
+                                                            <button type="submit"
+                                                                class="btn btn-primary btn-lg">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-12">
                                 <p class="lead font-weight-bold">Overview: <span class="font-weight-light">{{movie.overview}}</span><p>
