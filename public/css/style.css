@@ -87,3 +87,9 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.header-genre-links {
+    text-decoration: none;
+}
+a:hover { 
+    text-decoration: none; 
+}
