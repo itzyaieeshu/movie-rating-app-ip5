@@ -7,18 +7,15 @@ const bcrypt = require("bcrypt");
 console.log("In login page");
 
 const page = (req, res) => {
-  console.log("login post: " + req.body);
-
   res.render("pages/login", {
     title: "Login",
     message: req.query.message,
-    successMessage: req.query.successMessage,
+    successMessage: req.query.successMessage, 
     login: req.session.loggedin,
   });
 };
 
 const loginFormSubmit = (req, res) => {
-  console.log("login post: " + req.body.email, req.body.password);
   if (req.body.email === "" && req.body.password === "") {
     res.redirect(
       "/login?message=Please%20insert%20both%20email%20and%20password."

@@ -8,11 +8,8 @@ const page = (req, res) => {
     moviesAPI.popularMovies(),
   ])
     .then((results) => {
-      console.log("in movie page")
-         db.any('SELECT ROUND(AVG(rating),0) FROM ratings where movie_id = $1 GROUP BY movie_id;',[req.params.movieid]) 
-        .then((average) => {
-            console.log("Avg: " + average)
-            console.log("Query for avg rating executed")
+         db.oneOrNone('SELECT ROUND(AVG(rating),0) FROM ratings where movie_id = $1;',[req.params.id]) 
+        .then(({round: average}) => {   //Destructurinf the round to average to use as average rather than round
             res.render("pages/movie", {
               title: "movie",
               session: !req.session.userId ? false : true,
