@@ -62,6 +62,12 @@ section {
     border-color:rgba(0,0,0,.0);
     box-shadow:0 0 0 rgba(0,0,0,.0) !important;
 }
+.head-error {
+    color: #FF0000;
+}
+.heading.two {
+    font-size: 25px;
+}
 :root {
     --star-size: 25px;
     --star-color: #2B3D4B;

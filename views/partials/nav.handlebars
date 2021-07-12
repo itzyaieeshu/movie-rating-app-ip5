@@ -16,11 +16,18 @@
                 <a class="nav-link" href="#">About</a>
             </li>
         </ul>
+        {{#if session}}
+        <form class="form-inline my-2 my-lg-0">
+            <div class="pl-1 pr-1"><a class="btn btn-outline-secondary
+                    my-2 my-sm-0 btn-lg" href="/logout">Logout</a></div>
+        </form>
+        {{else}}
         <form class="form-inline my-2 my-lg-0">
             <div class="pl-1 pr-1"><a class="btn btn-primary my-2
                     my-sm-0 btn-lg" href="/signup">Signup</a></div>
             <div class="pl-1 pr-1"><a class="btn btn-outline-secondary
                     my-2 my-sm-0 btn-lg" href="/login">Login</a></div>
         </form>
+        {{/if}}
     </div>
 </nav>
