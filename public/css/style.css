@@ -68,7 +68,7 @@ section {
 }
 .heading.two {
     font-size: 25px;
-  }
+}
 :root {
     --star-size: 25px;
     --star-color: #2B3D4B;
@@ -87,4 +87,10 @@ section {
     background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.header-genre-links {
+    text-decoration: none;
+}
+a:hover { 
+    text-decoration: none; 
 }

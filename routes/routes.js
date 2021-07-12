@@ -6,6 +6,7 @@ const movie = require('./handlers/movie');
 const moviesAPI = require('./handlers/moviesAPI');
 const movieRating = require('./handlers/movieRating');
 
+const error = require('./handlers/error');
 
 module.exports = (app) => {
     app.get('/', index.page),
@@ -14,11 +15,10 @@ module.exports = (app) => {
     app.get('/logout', login.logoutFormSubmit),
     app.get('/signup', signup.page),
     app.post('/signup', signup.signupFormSubmit),
-    app.get('/movies', moviesList.page),
+    app.get('/movies/genre/:id', moviesList.getGenreMovies),
     app.get('/movie/:id', movie.page),
-    app.get('/api/discover/movie', moviesAPI.getPopularMovies)
-    app.get('/movie/:movieid/rating', movieRating.page)
-    app.post('/movie/:movieid/rating', movieRating.addRating)
-
-
+    app.get('/api/discover/movie', moviesAPI.getPopularMovies),
+    app.get('/movie/:movieid/rating', movieRating.page),
+    app.post('/movie/:movieid/rating', movieRating.addRating),
+    app.get('/*', error.pageNotFound)
 }
