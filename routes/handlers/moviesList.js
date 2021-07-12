@@ -1,9 +1,16 @@
-const page = (req, res) => {
-  res.render("pages/movies-list", {
-      title: 'movies-list',
-  });
-};
+const moviesAPI = require('../services/moviesAPI');
+
+const getGenreMovies = (req, res) => {
+    moviesAPI.getGenreMovies(req.params.id)
+    .then(response => {
+        res.render("pages/movies-list", {
+             title: 'Movies-List',
+             genreMovies: response.data.results
+        })
+    })  
+    .catch(err => console.error(err));
+}
 
 module.exports = {
-  page,
+  getGenreMovies,
 };
