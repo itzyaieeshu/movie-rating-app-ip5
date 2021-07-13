@@ -20,7 +20,7 @@ module.exports = (app) => {
     app.get('/movies/genre/:id', moviesList.getGenreMovies),
     app.get('/movie/:id', movie.page),
     app.get('/api/discover/movie', moviesAPI.getPopularMovies),
-    app.get('/movie/:movieid/rating', movieRating.page),
-    app.post('/movie/:movieid/rating', movieRating.addRating),
+    app.get('/movie/:id/rating', movieRating.page),
+    app.post('/movie/:id/rating', movieRating.addRating),
     app.get('/*', error.pageNotFound)
 }

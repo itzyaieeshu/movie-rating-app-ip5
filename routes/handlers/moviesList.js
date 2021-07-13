@@ -12,7 +12,12 @@ const getGenreMovies = (req, res) => {
              genreName: (genreIndex>=0) ? result[1].data.genres[genreIndex].name : '',
         })
     })  
-    .catch(err => console.error(err));
+    .catch(err => {
+      console.error(err)     
+      res.render("pages/error", {
+          message: err.message + " " + err.query,
+      });
+    }) 
 }
 
 module.exports = {

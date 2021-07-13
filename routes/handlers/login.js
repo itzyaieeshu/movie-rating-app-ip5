@@ -62,7 +62,6 @@ const loginFormSubmit = (req, res) => {
 };
 
 const loginModalSubmit = (req, res) => {
-  console.log("login post: " + req.body.email, req.body.password);
   if (req.body.email === "" && req.body.password === "") {
     res.redirect(
       "/login?message=Please%20insert%20both%20email%20and%20password."

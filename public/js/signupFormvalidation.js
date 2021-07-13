@@ -59,7 +59,6 @@
                 printError("pwdErr", "Please enter the password");
                 return false;
             } else if (pwd === confirmPwd) {
-                console.log("chk c.pwd")
                 printError("confirmPwdErr", "Please enter the confirm password");
                 return false;
             }
@@ -83,7 +82,6 @@
     }
 
     function comparePasswords(pwd, confirmPwd) {
-        console.log(pwd.value + " " + confirmPwd.value)
          if (pwd.value !== confirmPwd.value) {
              printError("confirmPwdErr", "Password and confirm password don't match.");
              return false;
