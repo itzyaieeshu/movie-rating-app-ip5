@@ -14,10 +14,6 @@ const page = (req, res) => {
 };
 
 const addRating = (req, res) => {
-    console.log("movieid:" +req.params.movieid)
-    console.log("rating:" +req.body.rating)
-    console.log("userid:" +req.session.userId)
-    let result;
     
     // Check if user is logged in or not
     if(!req.session.userId) {
