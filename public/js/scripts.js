@@ -61,11 +61,11 @@ $('#modalRating').on('click', function(e) {
           closeModal(rateMovieModal);            
           openModal(rateThanksModal);
         } else if(data === 'alreadyrated') {
-          $( "#error" ).append( '<p class="error">You have already rated this movie.</p>' );
+          $( "#error" ).append( '<p class="error">You have already rated this movie</p>' );
         } else if(data === 'insertrating') {
-          $( "#error" ).append( '<p class="error">Please insert valid rating.</p>' );
+          $( "#error" ).append( '<p class="error">Please insert valid rating</p>' );
         } else {
-          $( "#error" ).append( '<p class="error">Something went wrong, please try again later.</p>' );
+          $( "#error" ).append( '<p class="error">Something went wrong please try again later</p>' );
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
