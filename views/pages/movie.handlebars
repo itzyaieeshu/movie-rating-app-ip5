@@ -114,29 +114,54 @@
                                                 for the movie
                                                 <br /><span class="font-weight-bold">Luca</span>
                                             </h3>
+                                                <div id="error"></div>
                                             <div class="col-mg-12 pb-5 pl-5 pr-5">
-                                                <form action="/movie/{{movie.id}}/rating" method="post" class="mb-3">
+                                                <form id="ratingModalForm" class="mb-3">
                                                     <div class="row">
                                                         <div class="rate mx-auto">
-                                                            <input type="radio" id="star5" name="rate" value="5" />
+                                                            <input type="radio" class="rating" id="star5" name="rating" value="5" />
                                                             <label for="star5" title="text">5 stars</label>
-                                                            <input type="radio" id="star4" name="rate" value="4" />
+                                                            <input type="radio" class="rating" id="star4" name="rating" value="4" />
                                                             <label for="star4" title="text">4 stars</label>
-                                                            <input type="radio" id="star3" name="rate" value="3" />
+                                                            <input type="radio" class="rating" id="star3" name="rating" value="3" />
                                                             <label for="star3" title="text">3 stars</label>
-                                                            <input type="radio" id="star2" name="rate" value="2" />
+                                                            <input type="radio" class="rating" id="star2" name="rating" value="2" />
                                                             <label for="star2" title="text">2 stars</label>
-                                                            <input type="radio" id="star1" name="rate" value="1" />
+                                                            <input type="radio" class="rating" id="star1" name="rating" value="1" />
                                                             <label for="star1" title="text">1 star</label>
                                                         </div>
                                                         <div class="col-lg-12 my-3 text-center">
                                                             <button type="submit"
-                                                                class="btn btn-primary btn-lg">Submit</button>
+                                                                class="btn btn-primary btn-lg" id="modalRating">Submit</button>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="rateThanksModal" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="content-center">
+                                            <a class="navbar-brand" href="/"><img src="/img/logo.png" width="240"
+                                                    height="40" class="d-inline-block align-top" alt=""></a>
+                                            <span onclick="closeModal(rateThanksModal)" id="modal-close"
+                                                class="modal-close-box">&times;</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-center">
+                                        <div class="col-lg-12 genre-section rounded-lg bg-cs-1 pt-5">
+                                            <h3 class="font-weight-light text-center p-3">Thanks for rating the movie
+                                                <br /><span class="font-weight-bold">{{movie.title}}</span>
+                                            </h3>
+                                            <div class="col-lg-12 my-3 text-center">
+                                                <button type="submit" onclick="closeModal(rateThanksModal)"
+                                                    class="btn btn-primary btn-lg" id="modalThanks">Close</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
