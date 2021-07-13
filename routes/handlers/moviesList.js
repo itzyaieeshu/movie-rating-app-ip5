@@ -6,6 +6,8 @@ const getGenreMovies = (req, res) => {
         let genreIndex = result[1].data.genres.findIndex(x => x.id == req.params.id)
         res.render("pages/movies-list", {
              title: 'Movies-List',
+             session: !req.session.userId ? false : true,
+             sessionUser: !req.session.userId ? "" : req.session.firstname,
              genreMovies: result[0].data.results,
              genreName: (genreIndex>=0) ? result[1].data.genres[genreIndex].name : '',
         })
