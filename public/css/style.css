@@ -62,8 +62,9 @@ section {
     border-color:rgba(0,0,0,.0);
     box-shadow:0 0 0 rgba(0,0,0,.0) !important;
 }
-.head-error {
+.error {
     color: #FF0000;
+    text-align: center;
 }
 .heading.two {
     font-size: 25px;
@@ -92,4 +93,80 @@ section {
 }
 a:hover { 
     text-decoration: none; 
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+.modal-content {
+    background-color: #1C1C1C;
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+}
+.modal-header {
+    border-bottom: 1px solid #1C1C1C;
+}
+.modal-close-box {
+    position: absolute;
+    right: 0;
+    top: 0;    
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.modal-close-box:hover {
+    color: #FFFFFF !important;
+    background-color: #202733 !important;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #FEAA00;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #ffc700;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #ffc700;
 }

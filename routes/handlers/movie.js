@@ -14,6 +14,8 @@ const page = (req, res) => {
         movie: results[0].data,
         movieCredits: results[1].data,
         popularMovies: results[2].data.results,
+        message: req.query.message,
+        successMessage: req.query.successMessage,
       });
     })
     .catch((err) => console.error(err));
