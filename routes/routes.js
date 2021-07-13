@@ -12,6 +12,7 @@ module.exports = (app) => {
     app.get('/', index.page),
     app.get('/login', login.page),
     app.post('/login', login.loginFormSubmit),
+    app.post('/modal-login', login.loginModalSubmit),
     app.get('/logout', login.logoutFormSubmit),
     app.get('/signup', signup.page),
     app.post('/signup', signup.signupFormSubmit),
