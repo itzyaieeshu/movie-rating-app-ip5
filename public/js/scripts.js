@@ -33,6 +33,7 @@ $('#modalLogin').on('click', function(e) {
           closeModal(rateLoginModal);            
           openModal(rateMovieModal);
         } else {
+          $("#error").empty()
           $( "#error" ).append( '<p class="error">Login Unsuccessfull</p>' );
         }         
       },
@@ -46,7 +47,6 @@ $('#modalLogin').on('click', function(e) {
 
 $('#modalRating').on('click', function(e) {
   e.preventDefault();
-  console.log(window.location.href)
   $.ajax({
       url: window.location.href + '/rating',
       type: "POST",
@@ -56,16 +56,18 @@ $('#modalRating').on('click', function(e) {
       rating: $(".rating:checked").val(),
       beforeSend: function(xhr) {},
       success: function(data) {  
-        console.log(data)
-        if(data === 'success') {
+        if (data === 'success') {
           closeModal(rateMovieModal);            
           openModal(rateThanksModal);
-        } else if(data === 'alreadyrated') {
-          $( "#error" ).append( '<p class="error">You have already rated this movie</p>' );
-        } else if(data === 'insertrating') {
-          $( "#error" ).append( '<p class="error">Please insert valid rating</p>' );
+        } else if (data === 'alreadyrated') {
+          $("#rating-error").empty()
+          $( "#rating-error" ).append( '<p class="error">You have already rated this movie</p>' );
+        } else if (data === 'insertrating') {
+          $("#rating-error").empty()
+          $( "#rating-error" ).append( '<p class="error">Please insert valid rating</p>' );
         } else {
-          $( "#error" ).append( '<p class="error">Something went wrong please try again later</p>' );
+          $("#rating-error").empty()
+          $( "#rating-error" ).append( '<p class="error">Something went wrong please try again later</p>' );
         }
       },
       error: function(jqXHR, textStatus, errorThrown) {
