@@ -16,10 +16,14 @@ const movieCredits = (id) => axios.get('/movie/' + id + '/credits' + api_query +
 
 const genre = (genreId) => axios.get('/discover/movie' + api_query + popularity + '&with_genres=' + genreId);
 
+const search = (key) => axios.get('/search/movie' + api_query + lang + '&query=' + key + '&page=1&include_adult=false');
+
+
 module.exports = {
     popularMovies,
     genreLists,
     movie,
     movieCredits,
     genre,
+    search,
 }

@@ -4,6 +4,7 @@ const signup = require('./handlers/signup');
 const moviesList = require('./handlers/moviesList');
 const movie = require('./handlers/movie');
 const moviesAPI = require('./handlers/moviesAPI');
+const search = require('./handlers/search');
 const movieRating = require('./handlers/movieRating');
 const middleware = require('../middlewares/auth');
 
@@ -19,6 +20,7 @@ module.exports = (app) => {
     app.post('/signup', signup.signupFormSubmit),
     app.get('/movies/genre/:id', moviesList.getGenreMovies),
     app.get('/movie/:id', movie.page),
+    app.get('/api/search/movie/:key', search.movie),
     app.get('/api/discover/movie', moviesAPI.getPopularMovies),
     app.get('/movie/:movieid/rating', movieRating.page),
     app.post('/movie/:movieid/rating', movieRating.addRating),

@@ -1,6 +1,8 @@
 const rateLoginModal = document.getElementById('rateLoginModal');
 const rateMovieModal = document.getElementById('rateMovieModal');
 const rateThanksModal = document.getElementById('rateThanksModal');
+const searchBox = document.getElementById('movies-search-box');
+
     const openModal = (modal) => {
       modal.style.display = 'block';
     };
@@ -15,7 +17,20 @@ const getPopularMovies = () => {
     })
     return results
 }
+const searchMovies = (key) => {
+  $.getJSON(`/api/discover/movie`, (data) => {
+      console.log(data)
+      return data
+  })
+}
 getPopularMovies();
+
+
+document.addEventListener('DOMContentLoaded', () => { 
+  searchBox.oninput = () => {
+    searchMovies(searchBox.val)
+  };
+});
 
 $('#modalLogin').on('click', function(e) {
   e.preventDefault();
