@@ -13,3 +13,12 @@
 <script src="/js/scripts.js"></script>
 <script type="text/javascript" src="/js/signupFormValidation.js"></script> 
 <script type="text/javascript" src="/js/loginFormValidation.js"></script>
+<!-- stops from going back after logging -->
+    <script>
+        console.log(window.performance)
+        if (window.performance && window.performance.navigation.type === 2){
+          console.log('Reloading');
+          console.log(window.performance.navigation.type);
+          window.location.reload();
+        }
+      </script>

@@ -18,8 +18,12 @@ const page = (req, res) => {
         thrillerMovies: result[3].data.results,
       });
     })
-    .catch((err) => console.error(err));
-};
+    .catch(err => {
+      console.error(err)     
+      res.render("pages/error", {
+          message: err.message + " " + err.query,
+      });
+    }) };
 
 module.exports = {
   page,

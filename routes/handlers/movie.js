@@ -9,7 +9,7 @@ const page = (req, res) => {
   ])
     .then((results) => {
          db.oneOrNone('SELECT ROUND(AVG(rating),0) FROM ratings where movie_id = $1;',[req.params.id]) 
-        .then(({round: average}) => {   //Destructurinf the round to average to use as average rather than round
+        .then(({round: average}) => {   //Destructuring the round to average to use as average rather than round
             res.render("pages/movie", {
               title: "movie",
               session: !req.session.userId ? false : true,
@@ -30,7 +30,12 @@ const page = (req, res) => {
             });
           })  
     })
-    .catch((err) => console.error(err));
+    .catch(err => {
+      console.error(err)     
+      res.render("pages/error", {
+          message: err.message + " " + err.query,
+      });
+    }) 
 };
 
 module.exports = {

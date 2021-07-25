@@ -3,7 +3,7 @@
     const userEmail = document.querySelector("#userEmail")
     const userPwd = document.querySelector("#userPassword")
     loginForm.onsubmit = (e) => { 
-      //  console.log("Login form validation")
+        console.log("Login form validation")
         if (validateEmail(userEmail) && validatePwd(userPwd)) {
              console.log("Form validation is successful")
             }

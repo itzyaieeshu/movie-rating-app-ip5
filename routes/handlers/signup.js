@@ -13,8 +13,6 @@ const page = (req, res) => {
 };
 
 const signupFormSubmit = (req, res) => {
-  console.log("signup post: " + req.body);
-
   // validate form fields
   let namePattern = /^[A-Za-zÀ-ÖØ-öø-ÿ \-']+$/i;
   let passwordPattern =
@@ -42,7 +40,6 @@ const signupFormSubmit = (req, res) => {
     // check whether user/email already exists
     db.oneOrNone("SELECT * FROM users WHERE email = $1;", [req.body.email])
       .then((existingUser) => {
-        // console.log(existingUser)
         if (existingUser) {
           //   email already exists
           return res.redirect("/signup?message=User%20already%20exists.");
@@ -50,7 +47,6 @@ const signupFormSubmit = (req, res) => {
           //   put data into database
           // newUser password hash
           let hashedPassword = bcrypt.hashSync(password, saltRounds);
-          // console.log("Pwd and hashed pwd:" + req.body.password + " " +hashedPassword )
           db.any(
             "INSERT INTO users(firstname, lastname, email, password) VALUES ($1, $2, $3, $4);",
             [firstname, lastname, email, hashedPassword]

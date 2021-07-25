@@ -6,7 +6,7 @@ const page = (req, res) => {
         title: "Movie Rating",
         session: !req.session.userId ? false : true,
         sessionUser: !req.session.userId ? "" : req.session.firstname,
-        movieid: req.params.movieid,
+        id: req.params.id,
         rating: req.params.rating,
         message: req.query.message,
         successMessage: req.query.successMessage,
@@ -23,7 +23,7 @@ const addRating = (req, res) => {
 
     //If user is logged in , check if the user already gave ratings to this movie or not
     else {
-        db.oneOrNone('SELECT * FROM ratings WHERE user_id = $1 AND movie_id = $2', [req.session.userId, req.params.movieid])
+        db.oneOrNone('SELECT * FROM ratings WHERE user_id = $1 AND movie_id = $2', [req.session.userId, req.params.id])
         .then((ratingExist) => {
             console.log("rating: " + ratingExist)
           // if rating exists for this movie, return error
@@ -38,7 +38,7 @@ const addRating = (req, res) => {
                     res.send("insertrating")
                   } else {
                       // Enter user rating into the database
-                    db.none('INSERT INTO ratings(movie_id, rating, user_id) VALUES ($1, $2, $3);', [req.params.movieid, Number(req.body.rating), req.session.userId])
+                    db.none('INSERT INTO ratings(movie_id, rating, user_id) VALUES ($1, $2, $3);', [req.params.id, Number(req.body.rating), req.session.userId])
                     .then(() => {
                         res.send("success")
                     })
